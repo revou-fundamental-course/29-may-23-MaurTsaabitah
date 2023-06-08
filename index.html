@@ -1,12 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <link rel="stylesheet" href="/Tugas/index.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <header>
+        <img src="assets/logo-revou.svg" class="logo">
+        <div class="nav-bar">
+            <div class="nav-item">Home</div>
+            <div class="nav-item">Our Profile</div>
+            <div class="nav-item">Portofolio</div>
+            <div class="nav-item">Message Us</div>
+        </div>
+    </header>
+    <br>
+    <div id="hero" class="hero">
+        <ul class="a">
+            <li class="satu">Welcome to RevoU</li>
+            <li class="dua">We are thrilled to have you here. revoU is a cutting-edge platform designed to empower 
+                individuals in their pursuit of career advancement and personal growth.</li>
+            <li class="tiga"> At revoU, we believe in the transformative power of education and skill development. Our mission is to provide accessible, high-quality online courses and mentorship programs 
+                that equip you with the knowledge and tools needed to excel in today's competitive job market.
+                Whether you are looking to upskill in a specific industry, explore new career paths, 
+                or enhance your leadership abilities, revoU offers a wide range of comprehensive programs 
+                tailored to your needs. </li>
+            <li class="empat">Our expert instructors and industry professionals are dedicated to 
+                guiding you on your learning journey and helping you achieve your goals.
+                Join our thriving community of learners and connect with like-minded individuals from around 
+                the world. Network with industry experts, participate in engaging discussions, and gain valuable 
+                insights that will propel your professional development forward.</li>
+            <li class="lima">Take control of your future with revoU. Explore our course offerings, discover your passion, 
+                and embark on a transformative learning experience that will empower you to thrive in the ever-evolving world of work.
+                We are excited to be a part of your journey towards success. Start your revoU experience today!</li>
+                
+            
+        </ul>
+    </div>
+    <div id="Headquarters-section" class="headquarter">
+        <h1>Headquarters</h1>
+        <div class="wrapper">
+            <div class="Headquarters-image-container">
+                <div class="Headquarters-image"></div>
+                <img src="assets/gedung (1).jpg" class="gedung">
+                <p>jakarta</p>
+            </div>
+            <div class="Headquarters-image-container">
+                <div class="Headquarters-image"></div>
+                <img src="assets/gedung (2).jpg" class="gedung">
+                <p>Bandung</p>
+            </div>
+            <div class="Headquarters-image-container">
+                <div class="Headquarters-image"></div>
+                <img src="assets/gedung (3).jpg" class="gedung">
+                <p>Surabaya</p>
+            </div>
+        </div>
+        <br>
+        <div id="Message-Us-Section" class="Message-us">
+            <h1 class="message">Message us</h1>
+            <form>
+                <table>
+                    <tr>
+                        <td>Nama</td>
+                        <td>:</td>
+                        <td><input type="text" name="nama" id="Nama"></td>
+                    </tr>
+                    <tr>
+                        <td>Tanggal Lahir</td>
+                        <td>:</td>
+                        <td><input type="date" name="Tanggal Lahir" id="tanggallahir"></td>
+                    </tr>
+                    <td>Jenis Kelamin</td>
+                    <td>:</td>
+                    <td>
+                        <input type="radio" name="Gender" value="laki laki" id="laki">Laki-Laki</input>
+                        <input type="radio" name="Gender" value="Perempuan" id="perempuan">Perempuan</input>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td id="pesan">pesan</td>
+                        <td>:</td>
+                        <td>
+                            <textarea name="Pesan">
+                        </textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><button id="btn">Submit</button></td>
+                    </tr>
+                    
+                </table>
+                <div class="hasil">
+                <p class="output" id="output1"></p></div>
+            </form>
+        </div>
+        <div class="footer">
+            <h5>Created by Maura</h5>
+        </div>
+
+        <script>
+            var gender2 = document.getElementById('perempuan');
+            var gender1 = document.getElementById('laki');
+            const btn = document.getElementById('btn');
+            const out1 = document.getElementById('output1');
+            function fun() {
+                const name = document.getElementById('Nama').value;
+                const ttl = document.getElementById('tanggallahir').value;
+                const Pesan = document.getElementById('pesan').value;
+                if (gender1.checked) {
+                    gender = "Laki-Laki";
+                }
+                else if (gender2.checked) {
+                    gender = "Perempuan";
+                }
+                else {
+                    gender = "unknown";
+                }
     
+
+    
+                const response = "Nama:" + name + "<br>" + "ttl:" + ttl + "<br>" + "Jenis Kelamin:" + gender + "<br>" + "Pesan:" + Pesan + "<br>";
+                out1.innerHTML = response;
+    
+            }
+            btn.addEventListener('click', fun);
+    </script>
 </body>
+
+
 </html>
